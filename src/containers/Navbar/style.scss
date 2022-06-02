@@ -1,0 +1,19 @@
+.wtc-nav {
+    height: 75px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    .logo-container {
+        font-weight: 700;
+        font-size: 32px;
+    }
+
+    .ant-menu {
+        height: 100%;
+        flex-grow: 1;
+        background: none;
+        border-bottom: none;
+        font-weight: 600;
+    }
+}

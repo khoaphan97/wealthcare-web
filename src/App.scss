@@ -1,0 +1,16 @@
+.wtc-app {
+    width: 100vw;
+    height: 100vh;
+}
+
+.wtc-dashboard-area {
+    display: flex;
+    height: calc(100vh - 75px);
+    width: 100%;
+    .middle-content {
+        margin: 0 5px;
+        height: 100%;
+        background: #fff;
+        flex-grow: 1;
+    }
+}

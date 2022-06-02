@@ -1,0 +1,16 @@
+.wtc-resize-panel {
+    background-color: #fff;
+    position: relative;
+    .react-resizable-handle {
+        position: absolute;
+        height: 100%;
+        width: 5px;
+        cursor: ew-resize;
+    }
+    .react-resizable-handle-e {
+        right: -5px;
+    }
+    .react-resizable-handle-w {
+        left: -5px;
+    }
+}
