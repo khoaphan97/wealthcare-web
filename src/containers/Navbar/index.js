@@ -1,21 +1,36 @@
 import React from 'react';
 import { Menu } from 'antd';
 import './style.scss';
+import {  Link } from 'react-router-dom';
+import useCreateNavigation from '../../hooks/useCreateNavigation';
 
-const { Item } = Menu;
+const navList= [
+    {
+        key: 'dashboard',
+        label: 'dashboard',
+    },
+    {
+        key: 'accounts',
+        label: 'accounts',
+    },
+    {
+        key: 'histories',
+        label: 'histories',
+    },
+    {
+        key: 'yearly-plan',
+        label: 'yearly plan',
+    }
+]
 
 const Navbar = () => {
+    const navListItems = useCreateNavigation(navList);
     return (
         <nav className="wtc-nav">
             <div className="logo-container">
                 WEALTHCARE
             </div>
-            <Menu mode='horizontal'>
-                <Item>dashboard</Item>
-                <Item>accounts</Item>
-                <Item>histories</Item>
-                <Item>yearly plan</Item>
-            </Menu>
+            <Menu mode='horizontal' items={navListItems} />
         </nav>
     )
 }

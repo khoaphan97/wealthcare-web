@@ -1,0 +1,10 @@
+.wtc-tool-sprite {
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+    background-image: url('../../assets/images/tool-sprites.png');
+    background-repeat: no-repeat;
+    &:active {
+        background-position-x: -15px;
+    }
+}

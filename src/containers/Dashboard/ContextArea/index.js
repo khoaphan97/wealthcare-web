@@ -1,9 +1,10 @@
 import React, { useRef, useState } from 'react';
 import './style.scss';
-import ResizePanel from '../../components/ResizePanel';
+import ResizePanel from '../../../components/ResizePanel';
+import ToolSprites from '../../../components/ToolSprites';
 
 const defaultWidth = 350;
-const maxWidth = 500;
+const maxWidth = 650;
 const minWidth = 250;
 const ContextArea = () => {
 
@@ -31,7 +32,7 @@ const ContextArea = () => {
                 className="wtc-context-sensitive"
                 style={{ width: defaultWidth + 'px' }}
             >
-                {`<CONTEXT SENSITIVE>`}
+                <ToolSprites spriteName='pin' />
             </div>
         </ResizePanel>
     )
