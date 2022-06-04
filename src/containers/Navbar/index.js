@@ -19,7 +19,7 @@ const navList= [
     },
     {
         key: 'yearly-plan',
-        label: 'yearly plan',
+        label: 'yearly planasdasd',
     }
 ]
 
