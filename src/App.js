@@ -1,18 +1,25 @@
 import React, { useEffect } from 'react';
-import { Routes, Route, Navigate, Outlet, useLocation, useNavigate } from 'react-router-dom';
+import { Routes, Route, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import Navbar from './containers/Navbar';
 import './App.scss';
 import Dashboard from './containers/Dashboard';
+import apiController from './api';
+import PieChart from './components/PieChart';
+import Summary from './containers/Dashboard/Summary';
 
 function App() {
-
     const location = useLocation();
     const navigate = useNavigate();
 
     useEffect(() => {
-        if(location.pathname === "/" || location.pathname === "/dashboard") {
+        if (location.pathname === "/" || location.pathname === "/dashboard") {
             navigate("/dashboard/summary");
         }
+        const getDashboardData = async () => {
+            const data = await apiController.getDashboardData();
+            console.log(data);
+        }
+        getDashboardData();
     }, [location]);
 
     return (
@@ -27,7 +34,7 @@ function App() {
                     }
                 >
                     <Route path="dashboard" element={<Dashboard />}>
-                        <Route path="summary" element={<div>Summary</div>} />
+                        <Route path="summary" element={<Summary />} />
                         <Route path="budget-management" element={<div>Budget management</div>} />
                         <Route path="expense-records" element={<div>Expense records</div>} />
                     </Route>
