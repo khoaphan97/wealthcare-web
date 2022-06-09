@@ -1,5 +1,5 @@
 import React from 'react';
-import {  Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import ContextArea from './ContextArea';
 import LeftMenu from './LeftMenu';
 import './style.scss';
@@ -16,4 +16,4 @@ const Dashboard = () => {
     )
 }
 
-export default Dashboard
+export default Dashboard;

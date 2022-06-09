@@ -30,9 +30,12 @@ const ContextArea = () => {
             <div
                 ref={containerRef}
                 className="wtc-context-sensitive"
+                id="right-context"
                 style={{ width: defaultWidth + 'px' }}
             >
-                <ToolSprites spriteName='pin' />
+                <div className="expand-btn">
+                    <ToolSprites spriteName='expandRight' />
+                </div>
             </div>
         </ResizePanel>
     )
