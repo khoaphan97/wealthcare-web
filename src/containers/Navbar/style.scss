@@ -1,12 +1,19 @@
 .wtc-nav {
     height: 75px;
-    width: 100%;
+    width: 95%;
     display: flex;
     align-items: center;
 
     .logo-container {
-        font-weight: 700;
+        width: 209px;
+        height: 44px;
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 600;
         font-size: 32px;
+        line-height: 44px;
+        color: #FFFFFF;
+        margin: auto 114px auto 34px;
     }
 
     .ant-menu {
@@ -15,5 +22,32 @@
         background: none;
         border-bottom: none;
         font-weight: 600;
+        align-items: center;
+        justify-content: left;
+
+        .ant-menu-item {
+            &:hover::after {
+                border-bottom: 10px solid #FFFFFF;
+                bottom: -14px;
+                transition: border-bottom .5s;
+            }
+            &::after {
+                border-bottom: 10px solid transparent;
+                bottom: -14px;
+            }
+            a {
+                color: #FFFFFF;
+                &:hover{
+                    color: red;
+                }
+            }
+        }
+
+        .ant-menu-item-selected {
+            &::after {
+                border-bottom: 10px solid #FFFFFF;
+                bottom: -14px;
+            }
+        }
     }
 }

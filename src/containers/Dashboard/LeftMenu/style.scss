@@ -1,3 +1,29 @@
 .wtc-left-menu {
+    position: relative;
     height: 100%;
+    .ant-menu {
+        margin: 40px 20px 20px 20px;
+        border: none;
+        .ant-menu-item {
+            margin: 0px;
+        }
+        .ant-menu-item {
+            color: #808080;
+            a:hover {
+                color: red;
+            }
+        }
+        .ant-menu-item-selected {
+            background-color: transparent;
+            a {
+                color: #686868;
+                font-weight: bold;
+            }
+        }
+    }
+    .wtc-button {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
 }
