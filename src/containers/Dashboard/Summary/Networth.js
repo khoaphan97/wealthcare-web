@@ -16,7 +16,7 @@ const Networth = ({ openContext }) => {
         <div className='txt-middle-title' onClick={handleOpenContext}>Networth</div>
         <div className="nw-income">
           $35,500,500
-          <span><i class="fa fa-eye"></i></span>
+          <span><i className="fa fa-eye"></i></span>
         </div>
       </div>
       <div className="nw-chart">
