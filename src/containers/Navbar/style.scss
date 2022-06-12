@@ -5,8 +5,13 @@
     align-items: center;
 
     .logo-container {
-        font-weight: 700;
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 600;
         font-size: 32px;
+        // line-height: 44px;
+        color: #FFFFFF;
+        padding: 0 114px 0 34px;
     }
 
     .ant-menu {
@@ -15,5 +20,38 @@
         background: none;
         border-bottom: none;
         font-weight: 600;
+        align-items: center;
+        justify-content: left;
+
+        .ant-menu-item {
+            padding: 0 0;
+            margin: 0 25px 0;
+            &:first-child {
+                margin-left: 0;
+            }
+            &::after {
+                right: 0;
+                left: 0;
+            }
+            &:hover::after {
+                border-bottom: 10px solid #FFFFFF;
+                bottom: -14px;
+                transition: border-bottom .5s;
+            }
+            &::after {
+                border-bottom: 10px solid transparent;
+                bottom: -14px;
+            }
+            a {
+                color: #FFFFFF;
+            }
+        }
+
+        .ant-menu-item-selected {
+            &::after {
+                border-bottom: 10px solid #FFFFFF;
+                bottom: -14px;
+            }
+        }
     }
 }

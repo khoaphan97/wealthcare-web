@@ -2,7 +2,9 @@ import React from 'react'
 
 const BudgetTracking = () => {
   return (
-    <div>BudgetTracking</div>
+    <div className="middle-item">
+      <div className='txt-middle-title'>BudgetTracking</div>
+    </div>
   )
 }
 

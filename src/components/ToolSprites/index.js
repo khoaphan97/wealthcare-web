@@ -29,6 +29,7 @@ const spriteNameList = [
 ]
 
 const ToolSprites = ({ spriteName }) => {
+    //comment
     const getSpritePosition = () => {
         const index = spriteNameList.findIndex(name => name === spriteName);
         const yPosition = -index * 15;

@@ -3,6 +3,7 @@ import './style.scss';
 import ResizePanel from '../../../components/ResizePanel';
 import { Menu } from 'antd';
 import useCreateNavigation from '../../../hooks/useCreateNavigation';
+import ToolSprites from '../../../components/ToolSprites';
 
 
 const defaultWidth = 280;
@@ -50,6 +51,9 @@ const LeftMenu = () => {
                 className="wtc-left-menu"
                 style={{ width: defaultWidth + 'px' }}
             >
+                <div className="wtc-button">
+                    <ToolSprites spriteName={"expandLeft"}/>
+                </div>
                 <Menu items={dashboardMenuItems} />
             </div>
         </ResizePanel>

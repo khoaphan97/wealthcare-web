@@ -6,6 +6,7 @@ import Dashboard from './containers/Dashboard';
 import apiController from './api';
 import PieChart from './components/PieChart';
 import Summary from './containers/Dashboard/Summary';
+import "@fortawesome/fontawesome-free/css/all.css";
 
 function App() {
     const location = useLocation();
