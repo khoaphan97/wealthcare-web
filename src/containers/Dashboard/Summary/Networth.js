@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import withContext from '../../../components/ContextTab'
 import ToolSprites from '../../../components/ToolSprites'
 import apiController from '../../../api'
+import { convertToDollarFormat } from '../../../utils/helper'
 
 const Networth = ({ openContext }) => {
   const [datas, setData] = useState({ netWorth: "" });
@@ -16,7 +17,7 @@ const Networth = ({ openContext }) => {
   useEffect(() => {
     const getDashboardData = async () => {
       const data = await apiController.getDashboardData();
-      setData({ netWorth: data.netWorth !== undefined ? data.netWorth.toLocaleString().replace(/\./g,',') : "$0"});
+      setData({ netWorth: convertToDollarFormat(data.netWorth)});
     }
     getDashboardData();
   }, [])
@@ -26,7 +27,7 @@ const Networth = ({ openContext }) => {
       <div className="nw-infor">
         <div className='txt-middle-title' onClick={handleOpenContext}>Networth</div>
         <div className="nw-income">
-          ${datas.netWorth}
+          {datas.netWorth}
           <span><i className="fa fa-eye"></i></span>
         </div>
       </div>
