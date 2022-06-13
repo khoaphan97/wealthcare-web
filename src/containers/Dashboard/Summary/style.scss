@@ -1,10 +1,8 @@
-@import '../../../assets/mixin/mixins';
-
 .nw {
   position: relative;
   display: flex;
   justify-content: space-between;
-  @include middle-line-break();
+  border-bottom: 3px solid #98C0F4;
 
   .nw-infor {
     .nw-income {
@@ -38,14 +36,5 @@
   position: relative;
   display: flex;
   justify-content: space-between;
-  @include middle-line-break();
-
-  &::after {
-    position: absolute;
-    content: "";
-    border-bottom: 3px solid#68A9D8;
-    bottom: 0px;
-    right: 0;
-    left: 0;
-  }
+  border-bottom: 3px solid #98C0F4;
 }
