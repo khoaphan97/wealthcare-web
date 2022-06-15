@@ -58,7 +58,7 @@ export const VerticalChart = ({dataChart}) => {
   return <div>
     <Bar data={{
       datasets: [{
-        data: dataChart.netWorthGrowth,
+        data: dataChart,
         label:'Vertical',
         borderWidth: 1,
         Width: "20px",
