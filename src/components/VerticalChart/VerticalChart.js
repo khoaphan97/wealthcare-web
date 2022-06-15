@@ -40,6 +40,9 @@ const options = {
       text: '2020',
 
     },
+    Tooltip: {
+      backgroundColor: "#68A9D8"
+    }
   },
 
 };
@@ -55,10 +58,11 @@ export const VerticalChart = ({dataChart}) => {
   return <div>
     <Bar data={{
       datasets: [{
-        data: labels.map((item, index)=>dataChart.netWorthGrowth[index]),
+        data: dataChart.netWorthGrowth,
         label:'Vertical',
         borderWidth: 1,
-        Width: "20px"
+        Width: "20px",
+        backgroundColor: "#68A9D8"
       }],
       ...data,
     }} options={{
