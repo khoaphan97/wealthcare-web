@@ -18,14 +18,13 @@ const Networth = ({ openContext }) => {
     useEffect(() => {
       const getDashboardData = async () => {
         const data = await apiController.getDashboardData();
-        // setData({ netWorth: convertToDollarFormat(data.netWorth)});
         setData({data: data})
       }
       getDashboardData();
     }, [])
 
     let {netWorth, chartData} = datas.data;
-    // console.log("thinh" , netWorth);
+
   return (
     <div className='nw middle-item'>
       <div className="nw-infor">
