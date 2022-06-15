@@ -6,6 +6,7 @@
 
   .nw-infor {
     .nw-income {
+      display: flex;
       padding: 7px 20px 7px 15px;
       background-color: #68A9D8;
       font-size: 30px;
@@ -20,16 +21,22 @@
   }
 
   .nw-chart {
-    width: 500px;
-    height: 200px;
-    border: 2px solid red;
+    .nw-chart-vertical {
+      flex-grow: 1;
+    }
+    flex: 1;
+    padding-left: 42px;
+    padding-right: 10px;
+    display: flex;
+    justify-content: right;
+
+    .wtc-button {
+      position: relative;
+      right: -10px;
+      top: 4px;
+    }
   }
 
-  .wtc-button {
-    position: relative;
-    right: -10px;
-    top: 4px;
-  }
 }
 
 .exSummary {
