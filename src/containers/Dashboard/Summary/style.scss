@@ -3,9 +3,12 @@
   display: flex;
   justify-content: space-between;
   border-bottom: 3px solid #98C0F4;
+  overflow: auto;
+  white-space: nowrap;
 
   .nw-infor {
     .nw-income {
+      display: flex;
       padding: 7px 20px 7px 15px;
       background-color: #68A9D8;
       font-size: 30px;
@@ -20,21 +23,75 @@
   }
 
   .nw-chart {
-    width: 500px;
-    height: 200px;
-    border: 2px solid red;
+    .nw-chart-vertical {
+      width: 450px;
+    }
+    padding-left: 42px;
+    padding-right: 10px;
   }
-
   .wtc-button {
     position: relative;
     right: -10px;
     top: 4px;
   }
+
 }
 
 .exSummary {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
   border-bottom: 3px solid #98C0F4;
+  
+  .exSummary-content {
+    display: flex;
+    flex-wrap: flex;
+    margin-top: 21px;
+    .exSummary-column {
+      display: flex;
+      flex-wrap: flex;
+      flex: 0 0 calc((100%*2)/12);
+      height: 200px;
+      &>div {
+        padding: 20px;
+        align-self: flex-end;
+
+      }
+
+      .exSummary-columnIncome {
+        margin-right: 28px;
+        background-color: #85B1C5;
+      }
+
+      .exSummary-columnExpense {
+        background-color: #CA8787;
+      }
+    }
+
+    .exSummary-infor{
+      flex: 0 0 calc((100%*3)/12);
+      padding: 0 50px 0 0px;
+      font-weight: 600;
+      color: #808080;
+      .exSummary-inforIncome {
+        display: flex;
+        justify-content: space-between;
+        span {
+          color: #85B1C5;
+        }
+      }
+      .exSummary-inforExpense {
+        display: flex;
+        justify-content: space-between;
+        padding: 17px 0 40px 0;
+        span {
+          color: #CA8787;
+        }
+      }
+      .exSummary-inforRemain {
+        text-align: right;
+      }
+    }
+
+    .exSummary-pieChart {
+      padding-left: 30px;
+    }
+  }
 }

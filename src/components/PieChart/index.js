@@ -6,42 +6,52 @@ import './style.scss';
 Chart.register(ArcElement);
 Chart.register(Legend);
 
-const data = {
-    labels: [
-        'Red',
-        'Blue',
-        'Yellow'
-    ],
-    datasets: [{
-        label: 'My First Dataset',
-        data: [300, 50, 100],
-        backgroundColor: [
-            'rgb(255, 99, 132)',
-            'rgb(54, 162, 235)',
-            'rgb(255, 205, 86)'
-        ],
-        hoverOffset: 4
-    }],
-};
+
 
 const options = {
     elements: {
         arc: {
-            borderWidth: 2
+            borderWidth: 1
         }
     },
     responsive: false,
 };
 
-const PieChart = () => {
+const data = {
+    labels: ["aaa", 'bbb', 'ccc'],
+    datasets: [{
+        label: 'My First Dataset',
+        data: [1, 2, 3],
+        backgroundColor: ['red', 'yellow', 'blue'],
+        hoverOffset: 4
+    }],
+};
 
+const getLabel = (chartData) => {
+    const labels = chartData.map((item) => item.name);
+    const amount = chartData.map((item) => item.amount);
+    const bgColor = ['#71A1A4', '#82B5A2', '#6994A6', '#85B1C5'];
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: 'My First Dataset',
+            data: amount,
+            backgroundColor: bgColor,
+            hoverOffset: 4
+        }],
+    };
+    return data
+}
+const PieChart = ({ chartData }) => {
+    
     const onLegendClick = (e, legendItem, legend) => {
         console.log('hello', e, legendItem, legend);
     }
 
     return (
         <div>
-            <Pie data={data} options={{
+            <Pie data={getLabel(chartData)} options={{
+            // <Pie data={data} options={{
                 ...options,
                 plugins: {
                     legend: {
@@ -53,7 +63,7 @@ const PieChart = () => {
                                 size: 10,
                             },
                         },
-                        onClick: onLegendClick
+                        onClick: onLegendClick 
                     }
                 }
             }} />
