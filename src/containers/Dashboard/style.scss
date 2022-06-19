@@ -1,14 +1,12 @@
 .wtc-dashboard-area {
     .middle-content {
-        flex-grow: 1;
-
+        min-width: 300px;
         .txt-middle-title {
             color: #808080;
             height: 22px;
             line-height: 22px;
             cursor: pointer;
         }
-
         .middle-item {
             padding: 16px 20px;
         }

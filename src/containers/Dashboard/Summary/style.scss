@@ -3,6 +3,8 @@
   display: flex;
   justify-content: space-between;
   border-bottom: 3px solid #98C0F4;
+  overflow: auto;
+  white-space: nowrap;
 
   .nw-infor {
     .nw-income {
@@ -22,19 +24,15 @@
 
   .nw-chart {
     .nw-chart-vertical {
-      flex-grow: 1;
+      width: 450px;
     }
-    flex: 1;
     padding-left: 42px;
     padding-right: 10px;
-    display: flex;
-    justify-content: right;
-
-    .wtc-button {
-      position: relative;
-      right: -10px;
-      top: 4px;
-    }
+  }
+  .wtc-button {
+    position: relative;
+    right: -10px;
+    top: 4px;
   }
 
 }

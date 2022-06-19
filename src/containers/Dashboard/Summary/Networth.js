@@ -26,9 +26,9 @@ const Networth = ({ openContext, netWorth, chartData }) => {
         <div className="nw-chart-vertical">
           <VerticalChart dataChart = {chartData}/>
         </div>
-        <div className="wtc-button">
-          <ToolSprites spriteName={"setting"} />
-        </div>
+      </div>
+      <div className="wtc-button">
+        <ToolSprites spriteName={"setting"} />
       </div>
     </div>
   )
