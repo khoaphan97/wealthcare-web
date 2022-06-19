@@ -39,15 +39,12 @@
 
 .exSummary {
   border-bottom: 3px solid #98C0F4;
-  
   .exSummary-content {
     display: flex;
-    flex-wrap: flex;
     margin-top: 21px;
+    justify-content: space-between;
     .exSummary-column {
       display: flex;
-      flex-wrap: flex;
-      flex: 0 0 calc((100%*2)/12);
       height: 200px;
       &>div {
         padding: 20px;
@@ -63,35 +60,37 @@
       .exSummary-columnExpense {
         background-color: #CA8787;
       }
+      .exSummary-infor{
+        align-self: flex-start;
+        margin-left: 63px;
+        padding: 0 50px 0 0px;
+        font-weight: 600;
+        color: #808080;
+        .exSummary-inforIncome {
+          display: flex;
+          justify-content: space-between;
+          span {
+            color: #85B1C5;
+            padding-left: 30px;
+          }
+        }
+        .exSummary-inforExpense {
+          display: flex;
+          justify-content: space-between;
+          padding: 17px 0 40px 0;
+          span {
+            color: #CA8787;
+          }
+        }
+        .exSummary-inforRemain {
+          text-align: right;
+        }
+      }
     }
 
-    .exSummary-infor{
-      flex: 0 0 calc((100%*3)/12);
-      padding: 0 50px 0 0px;
-      font-weight: 600;
-      color: #808080;
-      .exSummary-inforIncome {
-        display: flex;
-        justify-content: space-between;
-        span {
-          color: #85B1C5;
-        }
-      }
-      .exSummary-inforExpense {
-        display: flex;
-        justify-content: space-between;
-        padding: 17px 0 40px 0;
-        span {
-          color: #CA8787;
-        }
-      }
-      .exSummary-inforRemain {
-        text-align: right;
-      }
-    }
 
     .exSummary-pieChart {
-      padding-left: 30px;
+      padding-right: 50px;
     }
   }
 }

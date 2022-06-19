@@ -6,8 +6,8 @@ import './style.scss';
 Chart.register(ArcElement);
 Chart.register(Legend);
 
-
-
+const sColor = '60%';
+const lColor = '50%';
 const options = {
     elements: {
         arc: {
@@ -17,20 +17,15 @@ const options = {
     responsive: false,
 };
 
-const data = {
-    labels: ["aaa", 'bbb', 'ccc'],
-    datasets: [{
-        label: 'My First Dataset',
-        data: [1, 2, 3],
-        backgroundColor: ['red', 'yellow', 'blue'],
-        hoverOffset: 4
-    }],
-};
-
 const getLabel = (chartData) => {
+    let baseColorH = 20;
     const labels = chartData.map((item) => item.name);
     const amount = chartData.map((item) => item.amount);
-    const bgColor = ['#71A1A4', '#82B5A2', '#6994A6', '#85B1C5'];
+    const color = chartData.map(() => {
+        baseColorH += 20;
+        return `hsl(${baseColorH}, ${sColor}, ${lColor})`;
+    })
+    const bgColor = color;
     const data = {
         labels: labels,
         datasets: [{
@@ -51,13 +46,12 @@ const PieChart = ({ chartData }) => {
     return (
         <div>
             <Pie data={getLabel(chartData)} options={{
-            // <Pie data={data} options={{
                 ...options,
                 plugins: {
                     legend: {
                         position: 'right',
                         labels: {
-                            boxWidth: 10,
+                            boxWidth: 20,
                             boxHeight: 10,
                             font: {
                                 size: 10,

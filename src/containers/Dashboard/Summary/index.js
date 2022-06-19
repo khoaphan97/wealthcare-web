@@ -19,7 +19,7 @@ const Summary = () => {
     return datas && (
         <div className="">
             <Networth netWorth={ datas.data.netWorth } chartData={ datas.data.chartData.netWorthGrowth }/>
-            <ExpenseSummary chartData={ datas.data.chartData.expenses } />
+            <ExpenseSummary chartData={ datas.data.chartData.expenses } expense={datas.data.expense} income={datas.data.income}/>
             <BudgetTracking />
         </div>
     )

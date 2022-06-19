@@ -1,7 +1,13 @@
 import React from 'react'
 import PieChart from '../../../components/PieChart'
+import { convertToDollarFormat } from '../../../utils/helper'
 
-const ExpenseSummary = ({chartData}) => {
+const ExpenseSummary = ({chartData, expense, income}) => {
+    const setHeight= (value1, value2) => {
+        if (value1 >= value2) return 100
+        else return ((value1/value2) * 100)
+    }
+
     return (
         <div className="exSummary middle-item">
             <div className='txt-middle-title'>
@@ -9,19 +15,19 @@ const ExpenseSummary = ({chartData}) => {
             </div>
             <div className="exSummary-content">
                 <div className='exSummary-column'>
-                    <div style={{height: '100%'}} className="exSummary-columnIncome"></div>
-                    <div style={{height: '60%'}}className="exSummary-columnExpense"></div>
-                </div>
-                <div className="exSummary-infor">
-                    <div className='exSummary-inforIncome'>
-                        <div>Income</div>
-                        <span>$25,500,147</span>
+                    <div style={{height: setHeight(income, expense)+'%'}} className="exSummary-columnIncome"></div>
+                    <div style={{height: setHeight(expense, income)+'%'}}className="exSummary-columnExpense"></div>
+                    <div className="exSummary-infor">
+                        <div className='exSummary-inforIncome'>
+                            <div>Income</div>
+                            <span>{convertToDollarFormat(income)}</span>
+                        </div>
+                        <div className='exSummary-inforExpense'>
+                            <div>Expense</div>
+                            <span>{convertToDollarFormat(expense)}</span>
+                        </div>
+                        <div className='exSummary-inforRemain'>{convertToDollarFormat(income-expense)}</div>
                     </div>
-                    <div className='exSummary-inforExpense'>
-                        <div>Expense</div>
-                        <span>$7,400,327</span>
-                    </div>
-                    <div className='exSummary-inforRemain'>$16,400,327</div>
                 </div>
                 <div className='exSummary-pieChart'>
                     <PieChart chartData={chartData}/>
