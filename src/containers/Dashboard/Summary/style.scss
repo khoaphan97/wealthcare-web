@@ -3,9 +3,12 @@
   display: flex;
   justify-content: space-between;
   border-bottom: 3px solid #98C0F4;
+  overflow: auto;
+  white-space: nowrap;
 
   .nw-infor {
     .nw-income {
+      display: flex;
       padding: 7px 20px 7px 15px;
       background-color: #68A9D8;
       font-size: 30px;
@@ -20,16 +23,18 @@
   }
 
   .nw-chart {
-    width: 500px;
-    height: 200px;
-    border: 2px solid red;
+    .nw-chart-vertical {
+      width: 450px;
+    }
+    padding-left: 42px;
+    padding-right: 10px;
   }
-
   .wtc-button {
     position: relative;
     right: -10px;
     top: 4px;
   }
+
 }
 
 .exSummary {
